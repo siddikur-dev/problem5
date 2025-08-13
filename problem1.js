@@ -9,4 +9,3 @@ function totalFine(fare) {
   const fine = fare + fare * (20 / 100) + 30;
   return fine;
 }
-console.log(totalFine("\Go"));
