@@ -6,6 +6,3 @@ function onlyCharacter(str) {
   let character = str.split(" ").join("").toUpperCase();
   return character;
 }
-console.log(onlyCharacter(true
-
-));
