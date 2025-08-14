@@ -16,10 +16,9 @@ function bestTeam(player1, player2) {
   }
 }
 
-let result
-console.log(
-  bestTeam(
-    { name: "Brazil", foul: 5, cardY: 1, cardR: 0 },
-    { name: "Argentina", foul: 7, cardY: 0, cardR: 0 }
-  )
-);
+let result = [
+  { name: "Germany", foul: 12, cardY: 0, cardR: 0 },
+  { name: "Sweden", foul: 7, cardY: 4, cardR: 1 },
+];
+let final = bestTeam(result[0],result[1]);
+console.log(final);
