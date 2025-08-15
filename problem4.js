@@ -10,7 +10,3 @@ function isSame(arr1, arr2) {
   }
   return true;
 }
-
-const result = isSame([2, 5, 6], [2, 5, 6]);
-
-console.log(result);
