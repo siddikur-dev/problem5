@@ -1,23 +1,39 @@
 function resultReport(marks) {
-  // You have to write your code here
-  //   if (marks < 40) {
-  //     return fail;
-  //   } else {
-  //     return pass;
-  //   }
-  // }
-  let sum = 0;
-  let count = number;
-  for (const number of marks) {
-    sum = sum + number;
+  if (!Array.isArray(marks)) {
+    return "Invalid";
   }
-  let finalScore = sum / marks.length;
-  return finalScore.toFixed(0);
 
-  for (const element of object) {
+  let defaultObj = { finalScore: 0, pass: 0, fail: 0 };
+
+  if (marks.length === 0) {
+    return defaultObj;
   }
+
+  const passMark = 40;
+  const totalSubject = marks.length;
+  let totalMarks = 0;
+
+  for (value of marks) {
+    if (typeof value !== "number") {
+      return "Invalid";
+    } else {
+      totalMarks += value;
+    }
+  }
+
+  const averageMarks = totalMarks / totalSubject;
+  defaultObj.finalScore = Math.round(averageMarks);
+
+  for (value of marks) {
+    if (typeof value !== "number") {
+      return "Invalid";
+    } else if (value >= passMark) {
+      defaultObj.pass++;
+    } else {
+      defaultObj.fail++;
+    }
+  }
+  return defaultObj;
 }
 
-const result = resultReport([99, 87, 67, 12, 87]);
-
-console.log("final score:", result);
+console.log(resultReport(["99"]));
